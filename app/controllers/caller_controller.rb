@@ -8,7 +8,18 @@ class CallerController < ActionController::Base
     Rails.logger.debug("+++ params: params.inspect")
     case params['Digits']
     when "1"
-      txt = "Zomg im leet"
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+      <Response>
+        <Say>
+            Please leave a message at the beep. 
+            Press the star key when finished. 
+        </Say>
+        <Record
+            action=\"/audio\"
+            maxLength=\"30\"
+            />
+        <Say>I did not receive a recording</Say>
+      </Response>"
     when "2"
       # https://dl.dropbox.com/u/21813690/SUGE%20KNIGHT1.mp3
       resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Play>https://dl.dropbox.com/u/21813690/SUGE%20KNIGHT1.mp3</Play></Response>"
