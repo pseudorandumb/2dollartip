@@ -4,7 +4,7 @@ class CallerController < ActionController::Base
     if params
       resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
             <Response>
-              <Say voice=\"woman\" language=\"fr\">Chapeau! #{params['Digits']}</Say>
+              <Say voice=\"woman\" language=\"en\">Fuck off! #{params.inspect}</Say>
             </Response>"
     else
       resp = '<?xml version="1.0" encoding="UTF-8"?>
