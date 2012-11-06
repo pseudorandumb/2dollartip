@@ -1,10 +1,10 @@
 class CallerController < ActionController::Base
   def index
     resp = ""
-    if params
+    if params['Digits']
       resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
             <Response>
-              <Say voice=\"woman\" language=\"en\">Fuck off! #{params.inspect}</Say>
+              <Say voice=\"woman\" language=\"en\">Fuck off! #{params['Digits']]}</Say>
             </Response>"
     else
       resp = '<?xml version="1.0" encoding="UTF-8"?>
