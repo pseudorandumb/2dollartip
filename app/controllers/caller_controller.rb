@@ -7,13 +7,12 @@ class CallerController < ActionController::Base
               <Say voice=\"woman\" language=\"en\">Fuck off! #{params['Digits']]}</Say>
             </Response>"
     else
-      resp = '<?xml version="1.0" encoding="UTF-8"?>
+      resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
               <Response>
-                <Gather timeout="10" finishOnKey="*">
-                    <Say>Press one to listen to a message from the last caller and record a message for the next caller
-                    Press two to play the song of the week. Press three to listen to a poem.</Say>
+                <Gather timeout=\"10\" finishOnKey=\"*\">
+                    <Say>Press one to listen to a message from the last caller and record a message for the next caller press two to play the song of the week. Press three to listen to a poem.</Say>
                 </Gather>
-              </Response>'
+              </Response>"
     end
     render xml: resp
   end
