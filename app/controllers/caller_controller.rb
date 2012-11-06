@@ -6,7 +6,16 @@ class CallerController < ActionController::Base
 
   def create
     Rails.logger.debug("+++ params: params.inspect")
-    resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Say voice=\"woman\" language=\"en\">Fuck off! #{params['Digits']}</Say></Response>"
+    case params['Digits']
+    when 1
+      "Zomg im leet"
+    when 2
+      "oom bop, bop bop, om bom, yea yeaaa"
+    when 3
+      "Roses are red, violets are blue. Steve rogenbock is better than you."
+    else
+      resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Say voice=\"woman\" language=\"en\">Fuck off! #{params['Digits']}</Say></Response>"
+    end
     render xml: resp
   end
 end
