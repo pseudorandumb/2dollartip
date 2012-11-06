@@ -8,7 +8,7 @@ class CallerController < ActionController::Base
     Rails.logger.debug("+++ params: params.inspect")
     case params['Digits']
     when "1"
-      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+      resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
       <Response>
         <Say>
             Please leave a message at the beep. 
