@@ -10,13 +10,14 @@ class CallerController < ActionController::Base
     when "1"
       txt = "Zomg im leet"
     when "2"
-      txt = "oom bop, bop bop, om bom, yea yeaaa"
+      # https://dl.dropbox.com/u/21813690/SUGE%20KNIGHT1.mp3
+      resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Play>https://dl.dropbox.com/u/21813690/SUGE%20KNIGHT1.mp3</Play></Response>"
     when "3"
       txt = "Roses are red, violets are blue. Steve rogenbock is better than you."
     else
-     txt = "Fuck off! #{params['Digits']} isn't an option!"
+      txt = "Fuck off! #{params['Digits']} isn't an option!"
     end
-    resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Say voice=\"woman\" language=\"en\">#{txt}</Say></Response>"
+    resp = resp ? resp : "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Say voice=\"woman\" language=\"en\">#{txt}</Say></Response>"
     render xml: resp
   end
 end
