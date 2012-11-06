@@ -1,6 +1,6 @@
 class CallerController < ActionController::Base
   def index
-    resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Gather timeout=\"10\" finishOnKey=\"*\"><Say>Press one to listen to a message from the last caller and record a message for the next caller press two to play the song of the week. Press three to listen to a poem.</Say></Gather></Response>"
+    resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Gather timeout=\"10\" finishOnKey=\"*\"><Say>Press one to listen to a message from the last caller and record a message for the next caller. Press two to play the song of the week. Press three to listen to a poem.</Say></Gather></Response>"
     render xml: resp
   end
 
@@ -10,9 +10,9 @@ class CallerController < ActionController::Base
     when "1"
       resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
       <Response>
+      <Play>#{Audio.last.url}</Play>
         <Say>
-            Please leave a message at the beep. 
-            Press the star key when finished. 
+          End of message. Please leave a message for the next person then press any key when done.
         </Say>
         <Record
             action=\"/audio\"
