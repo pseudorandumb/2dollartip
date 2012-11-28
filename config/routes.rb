@@ -15,6 +15,7 @@ Twodollartip::Application.routes.draw do
 
   resources :caller
   resources :audio
+  resources :sms
   # Sample resource route with options:
   #   resources :products do
   #     member do
