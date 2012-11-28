@@ -20,7 +20,8 @@ class SmsController < ActionController::Base
     Rails.logger.debug "paramaters from text: #{params.inspect}"
     resp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
               <Response>
-                <Sms>I'm hungry!</Sms>
+                <Sms>Call me! If you do you can listen to the voice mail from the last person who called and leave one for the next!
+                  Q(-_-Q)</Sms>
               </Response>"
     render xml: resp
   end
